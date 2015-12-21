@@ -46,11 +46,13 @@ Vagrant.configure(2) do |config|
 	# end
 
 	config.vm.provision "shell", inline: <<-SHELL
-		apt-get update
-		apt-get -y -q install git
-		git clone https://gist.github.com/643f8b10ce4c0c5a3b27.git ~/install_scripts
+		#apt-get update
+		#apt-get -y -q install git
+		#git clone https://gist.github.com/643f8b10ce4c0c5a3b27.git ~/install_scripts
 
-		sh ~/install_scripts/bootstrap.sh
+		mkdir ~/install && cd ~/install
+		wget https://raw.githubusercontent.com/loispuig/gists_debian/master/install_owncloud8_php7_redis.sh
+		sh install_owncloud8_php7_redis.sh
 
 		#mv ~/install_scripts/bootstrap.sh /home/vagrant/bootstrap.sh
 		#chown vagrant:vagrant /home/vagrant/bootstrap.sh
