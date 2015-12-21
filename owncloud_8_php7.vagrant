@@ -50,7 +50,7 @@ Vagrant.configure(2) do |config|
 		#apt-get -y -q install git
 		#git clone https://gist.github.com/643f8b10ce4c0c5a3b27.git ~/install_scripts
 
-		wget https://raw.githubusercontent.com/loispuig/gists_debian/master/install_owncloud8_php7_redis.sh
+		wget -nv https://raw.githubusercontent.com/loispuig/gists_debian/master/install_owncloud8_php7_redis.sh
 		sh install_owncloud8_php7_redis.sh
 
 		#mv ~/install_scripts/bootstrap.sh /home/vagrant/bootstrap.sh
