@@ -6,6 +6,11 @@ If you don't already have the Homebrew OS package manager, type :
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
+We need virtualbox so again if you don't already have install
+```
+brew cask install virtualbox virtualbox-extension-pack
+```
+
 Then install vagrant
 ```
 brew cask install vagrant
