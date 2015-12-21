@@ -18,7 +18,5 @@ brew cask install vagrant
 
 ## ownCloud 8.2 (debian 8 64bit / Apache2 / PHP7 / Redis)
 ```
-mkdir owncloud && cd owncloud
-curl -Lo Vagrantfile https://raw.githubusercontent.com/loispuig/gists_vagrant/master/owncloud_8_php7.vagrant
-vagrant up
+mkdir owncloud && cd owncloud && curl -Lo Vagrantfile https://raw.githubusercontent.com/loispuig/gists_vagrant/master/owncloud_8_php7.vagrant && vagrant up
 ```
