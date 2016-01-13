@@ -46,18 +46,7 @@ Vagrant.configure(2) do |config|
 	# end
 
 	config.vm.provision "shell", inline: <<-SHELL
-		#apt-get update
-		#apt-get -y -q install git
-		#git clone https://gist.github.com/643f8b10ce4c0c5a3b27.git ~/install_scripts
-
-		wget -nv https://raw.githubusercontent.com/loispuig/gists_debian/master/install_owncloud8_php7_redis.sh
-		sh install_owncloud8_php7_redis.sh
-
-		#mv ~/install_scripts/bootstrap.sh /home/vagrant/bootstrap.sh
-		#chown vagrant:vagrant /home/vagrant/bootstrap.sh
-		#echo "sudo /home/vagrant/./bootstrap.sh" >> /home/vagrant/.bashrc
-		#chmod +x /home/vagrant/bootstrap.sh
-
-		#rm -f install_owncloud8_php7_redis.sh
+		#wget -nv https://raw.githubusercontent.com/loispuig/gists_vagrant/master/lamp_php7.sh
+		#sh lamp_php7.sh
 	SHELL
 end
