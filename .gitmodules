@@ -1,0 +1,3 @@
+[submodule "boxes/debian-jessie-amd64"]
+	path = boxes/debian-jessie-amd64
+	url = git@github.com:loispuig/vagrant-box-debian-jessie-amd64.git
