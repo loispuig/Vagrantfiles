@@ -43,7 +43,7 @@
 			],
 			"headless": "{{ user `headless` }}",
 			"boot_wait": "10s",
-			"output_directory": "builds/tmp",
+			"output_directory": "{{ user `builds` }}/artifacts",
 			"disk_size": "{{ user `disk_size` }}",
 			"guest_os_type": "{{ user `guest_os_type` }}",
 			"hard_drive_interface": "sata",
