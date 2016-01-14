@@ -105,6 +105,6 @@
 	],
 	"push": {
 		"name": "{{user `atlas_username`}}/{{ user `box_name` }}",
-		"vcs": false
+		"vcs": true
 	}
 }
