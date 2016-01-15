@@ -89,12 +89,5 @@
 				"keep_input_artifact": true
 			}
 		]
-	],
-	"push": {
-		"name": "{{user `atlas_username`}}/{{ user `box_name` }}",
-		"vcs": true,
-		"include": [
-			"scripts"
-		]
-	}
+	]
 }
