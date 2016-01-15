@@ -70,15 +70,15 @@
 				"type": "vagrant",
 				"output": "{{ user `output_dir` }}/virtualbox/{{ user `box_name` }}.box",
 				"vagrantfile_template": "assets/rsync_for_sharedfolders_Vagrantfile",
-				"keep_input_artifact": true
+				"keep_input_artifact": false
 			},
 			{
 				"type": "atlas",
 				"only": ["virtualbox-iso"],
-				"artifact": "{{user `atlas_username`}}/{{ user `box_name` }}-atlas",
+				"artifact": "{{user `atlas_username`}}/{{ user `box_name` }}",
 				"artifact_type": "vagrant.box",
 				"token": "{{user `atlas_token`}}",
-				"keep_input_artifact": true,
+				"keep_input_artifact": false,
 				"metadata": {
 					"provider": "virtualbox",
 					"version": "{{user `box_version`}}",
@@ -102,9 +102,5 @@
 				"scripts/minimize.sh"
 			]
 		}
-	],
-	"push": {
-		"name": "{{user `atlas_username`}}/{{ user `box_name` }}",
-		"vcs": true
-	}
+	]
 }
