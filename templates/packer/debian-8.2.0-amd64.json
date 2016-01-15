@@ -70,13 +70,13 @@
 			"pause_before": "10s",
 			"execute_command": "echo 'vagrant'|sudo -S sh '{{.Path}}'",
 			"scripts": [
-				"scripts/base.sh",
-				"scripts/vagrant.sh",
-				"scripts/virtualbox.sh",
-				"scripts/packages.sh",
-				"scripts/aliases.sh",
-				"scripts/cleanup.sh",
-				"scripts/minimize.sh"
+				"scripts/debian/base.sh",
+				"scripts/debian/vagrant.sh",
+				"scripts/debian/virtualbox.sh",
+				"scripts/debian/packages.sh",
+				"scripts/debian/aliases.sh",
+				"scripts/debian/cleanup.sh",
+				"scripts/debian/minimize.sh"
 			]
 		}
 	],
