@@ -70,7 +70,7 @@
 				"type": "vagrant",
 				"output": "{{ user `output_dir` }}/virtualbox/{{ user `box_name` }}.box",
 				"vagrantfile_template": "assets/rsync_for_sharedfolders_Vagrantfile",
-				"keep_input_artifact": false
+				"keep_input_artifact": true
 			},
 			{
 				"type": "atlas",
@@ -78,7 +78,7 @@
 				"artifact": "{{user `atlas_username`}}/{{ user `box_name` }}-atlas",
 				"artifact_type": "vagrant.box",
 				"token": "{{user `atlas_token`}}",
-				"keep_input_artifact": false,
+				"keep_input_artifact": true,
 				"metadata": {
 					"provider": "virtualbox",
 					"version": "{{user `box_version`}}",
