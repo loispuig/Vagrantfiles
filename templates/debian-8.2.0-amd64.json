@@ -1,7 +1,5 @@
 {
 	"variables": {
-		"atlas_token": "{{env `ATLAS_TOKEN`}}",
-		"atlas_username": "{{env `ATLAS_USERNAME`}}",
 		"box_version": "0.0.1",
 		"box_changelog": "",
 		"box_name": "debian-8.2.0-amd64",
