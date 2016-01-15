@@ -75,6 +75,7 @@
 			{
 				"type": "atlas",
 				"only": ["virtualbox-iso"],
+				"vagrantfile_template": "assets/rsync_for_sharedfolders_Vagrantfile",
 				"artifact": "{{user `atlas_username`}}/{{ user `box_name` }}",
 				"artifact_type": "vagrant.box",
 				"token": "{{user `atlas_token`}}",
@@ -102,5 +103,9 @@
 				"scripts/minimize.sh"
 			]
 		}
-	]
+	],
+	"push": {
+		"name": "{{user `atlas_username`}}/{{ user `box_name` }}",
+		"vcs": true
+	}
 }
