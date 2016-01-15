@@ -64,29 +64,6 @@
 			]
 		}
 	],
-	"post-processors": [
-		[
-			{
-				"type": "vagrant",
-				"output": "{{ user `output_dir` }}/virtualbox/{{ user `box_name` }}.box",
-				"vagrantfile_template": "vagrantfiles/debian-8.2.0-amd64.Vagrantfile",
-				"keep_input_artifact": false
-			},
-			{
-				"type": "atlas",
-				"only": ["virtualbox-iso"],
-				"artifact": "{{user `atlas_username`}}/{{ user `box_name` }}",
-				"artifact_type": "vagrant.box",
-				"token": "{{user `atlas_token`}}",
-				"keep_input_artifact": false,
-				"metadata": {
-					"provider": "virtualbox",
-					"version": "{{user `box_version`}}",
-					"description": "{{user `box_changelog`}}"
-				}
-			}
-		]
-	],
 	"provisioners": [
 		{
 			"type": "shell",
@@ -103,8 +80,14 @@
 			]
 		}
 	],
-	"push": {
-		"name": "{{user `atlas_username`}}/{{ user `box_name` }}",
-		"vcs": true
-	}
+	"post-processors": [
+		[
+			{
+				"type": "vagrant",
+				"output": "{{ user `output_dir` }}/virtualbox/{{ user `box_name` }}.box",
+				"compression_level": 9,
+				"keep_input_artifact": true
+			}
+		]
+	]
 }

@@ -1,21 +1,14 @@
 # Vanilla Debian Packer templates
 
 The templates here are used to create the Debian Vagrant base boxes available at 
-https://atlas.hashicorp.com/debian/
+https://atlas.hashicorp.com/loispuig/
 
 ## Direct Download
 
-	vagrant init debian/jessie64
-	vagrant init debian/wheezy64
+	vagrant init loispuig/debian-8.2.0-amd64; vagrant up
 
 ## Rebuilding the base boxes
 See https://wiki.debian.org/Teams/Cloud/RebuildVagrantBaseBoxes
-
-## Releasing a new version:
-1. Call the `make all` target
-2. Update the version in atlas_tools/uploadBox.pl and call the script to upload to atlas
-3. Release the boxes on atlas
-4. Call `make release` to sign the boxes and upload the checksums to Alioth
 
 ## Credits
 
