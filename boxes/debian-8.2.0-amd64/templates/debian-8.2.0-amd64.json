@@ -69,7 +69,7 @@
 			{
 				"type": "vagrant",
 				"output": "{{ user `output_dir` }}/virtualbox/{{ user `box_name` }}.box",
-				"vagrantfile_template": "./Vagrantfile.template",
+				"vagrantfile_template": "vagrantfiles/debian-8.2.0-amd64.Vagrantfile",
 				"keep_input_artifact": false
 			},
 			{
