@@ -92,6 +92,9 @@
 	],
 	"push": {
 		"name": "{{user `atlas_username`}}/{{ user `box_name` }}",
-		"vcs": true
+		"vcs": true,
+		"include": [
+			"scripts"
+		]
 	}
 }
