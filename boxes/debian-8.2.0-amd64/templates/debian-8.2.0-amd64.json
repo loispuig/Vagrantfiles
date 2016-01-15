@@ -69,6 +69,7 @@
 			{
 				"type": "vagrant",
 				"output": "{{ user `output_dir` }}/virtualbox/{{ user `box_name` }}.box",
+				"vagrantfile_template": "./Vagrantfile.template",
 				"keep_input_artifact": false
 			},
 			{
