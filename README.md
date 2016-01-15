@@ -1,22 +1,28 @@
-## Vagrant install on OSX
-Open a terminal.
+# Vanilla Debian Packer templates
 
-If you don't already have the Homebrew OS package manager, type :
-```
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
+The templates here are used to create the Debian Vagrant base boxes available at 
+https://atlas.hashicorp.com/loispuig/
 
-We need virtualbox, so again if you don't already have it
-```
-brew cask install virtualbox virtualbox-extension-pack
-```
+# Adding the box to vagrant
 
-Then install vagrant
+## Rebuilding the box
 ```
-brew cask install vagrant
+packer build templates/debian-8.2.0-amd64.json
+vagrant box add -name debian-8.2.0-amd64 builds/virtualbox/debian-8.2.0-amd64.box
 ```
 
-## ownCloud 8.2 (debian 8 64bit / Apache2 / PHP7 / Redis)
+## Direct Download
 ```
-mkdir owncloud && cd owncloud && curl -Lo Vagrantfile https://raw.githubusercontent.com/loispuig/gists_vagrant/master/owncloud_8_php7.vagrant && vagrant up
+vagrant box add loispuig/debian-8.2.0-amd64
 ```
+
+# Executing the box
+```
+vagrant init ; vagrant up
+```
+
+
+## Credits
+Many thanks to [Mitchell Hashimoto](https://github.com/mitchellh/) for his awesome work on [Packer](https://github.com/mitchellh/packer) and [Vagrant](https://github.com/mitchellh/vagrant), [![Tech-Angels](http://media.tumblr.com/tumblr_m5ay3bQiER1qa44ov.png)](http://www.tech-angels.com)
+
+  
