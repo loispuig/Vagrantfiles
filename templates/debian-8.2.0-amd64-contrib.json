@@ -1,0 +1,111 @@
+{
+	"variables": {
+		"atlas_token": "{{env `ATLAS_TOKEN`}}",
+		"atlas_username": "{{env `ATLAS_USERNAME`}}",
+		"box_version": "0.1.1",
+		"box_description": "
+			Minimal debian install  
+			Locale en_US  
+			Keyboard us  
+			VirtualBox guest additions  
+			Additional packages : curl, cron, unzip, puppet 3.7, git 2.1.4, screenfetch  
+			Some commons aliases in /home/vagrant/.bash_aliases
+		",
+		"box_name": "debian-8.2.0-amd64",
+		"box_memory": "512",
+		"box_cpu": "1",
+		"output_dir": "builds",
+		"locale": "en_US",
+		"keyboard": "us",
+		"headless": "false",
+		"disk_size": "20480",
+		"guest_os_type": "Debian_64",
+		"iso_checksum": "d393d17ac6b3113c81186e545c416a00f28ed6e05774284bb5e8f0df39fcbcb9",
+		"iso_checksum_type": "sha256",
+		"iso_url": "http://cdimage.debian.org/debian-cd/8.2.0/amd64/iso-cd/debian-8.2.0-amd64-netinst.iso",
+		"ssh_username": "vagrant",
+		"ssh_password": "vagrant",
+		"ssh_port": "22",
+		"shutdown_command": "sudo /sbin/halt -p"
+	},
+	"builders": [
+		{
+			"type": "virtualbox-iso",
+			"boot_command": [
+				"<esc><wait>",
+				"install <wait>",
+				"preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/debian-8.2.0-preseed.cfg <wait>",
+				"debian-installer={{ user `locale` }} <wait>",
+				"auto <wait>",
+				"locale={{ user `locale` }} <wait>",
+				"kbd-chooser/method={{ user `keyboard` }} <wait>",
+				"netcfg/get_hostname={{ .Name }} <wait>",
+				"netcfg/get_domain=vagrantup.com <wait>",
+				"fb=false <wait>",
+				"debconf/frontend=noninteractive <wait>",
+				"console-setup/ask_detect=false <wait>",
+				"console-keymaps-at/keymap={{ user `keyboard` }} <wait>",
+				"keyboard-configuration/xkb-keymap={{ user `keyboard` }} <wait>",
+				"<enter><wait>"
+			],
+			"headless": "{{ user `headless` }}",
+			"boot_wait": "10s",
+			"output_directory": "{{ user `output_dir` }}/artifacts",
+			"disk_size": "{{ user `disk_size` }}",
+			"guest_os_type": "{{ user `guest_os_type` }}",
+			"hard_drive_interface": "sata",
+			"http_directory": "http",
+			"iso_url": "{{ user `iso_url` }}",
+			"iso_checksum": "{{ user `iso_checksum` }}",
+			"iso_checksum_type": "{{ user `iso_checksum_type` }}",
+			"ssh_username": "{{ user `ssh_username` }}",
+			"ssh_password": "{{ user `ssh_password` }}",
+			"ssh_port": "{{ user `ssh_port` }}",
+			"ssh_wait_timeout": "10000s",
+			"shutdown_command": "{{ user `shutdown_command` }}",
+			"virtualbox_version_file": ".vbox_version",
+			"vm_name": "{{ user `box_name` }}",
+			"vboxmanage": [
+				[ "modifyvm", "{{.Name}}", "--memory", "{{ user `box_memory` }}" ],
+				[ "modifyvm", "{{.Name}}", "--cpus", "{{ user `box_cpu` }}" ]
+			]
+		}
+	],
+	"provisioners": [
+		{
+			"type": "shell",
+			"pause_before": "10s",
+			"execute_command": "echo 'vagrant'|sudo -S sh '{{.Path}}'",
+			"scripts": [
+				"scripts/debian/base.sh",
+				"scripts/debian/vagrant.sh",
+				"scripts/debian/virtualbox.sh",
+				"scripts/debian/packages.sh",
+				"scripts/debian/aliases.sh",
+				"scripts/debian/cleanup.sh",
+				"scripts/debian/minimize.sh"
+			]
+		}
+	],
+	"post-processors": [
+		[
+			{
+				"type": "vagrant",
+				"output": "{{ user `output_dir` }}/virtualbox/{{ user `box_name` }}.box",
+				"compression_level": 9,
+				"keep_input_artifact": true
+			},
+			{
+				"type": "atlas",
+				"only": ["virtualbox-iso"],
+				"artifact": "{{user `atlas_username`}}/{{user `box_name`}}",
+				"artifact_type": "vagrant.box",
+				"metadata": {
+					"provider": "virtualbox",
+					"version": "0.0.1",
+					"description": "{{user `box_description`}}"
+				}
+			}
+		]
+	]
+}
