@@ -1,10 +1,7 @@
 {
 	"variables": {
-		"atlas_token": "{{env `ATLAS_TOKEN`}}",
-		"atlas_username": "{{env `ATLAS_USERNAME`}}",
-		"box_version": "0.1.1",
-		"box_changelog": "",
-		"box_name": "debian-8.2.0-amd64",
+		"box_name": "debian-jessie-amd64",
+		"box_version": "8.2.0",
 		"box_memory": "512",
 		"box_cpu": "1",
 		"output_dir": "builds",
@@ -87,17 +84,6 @@
 				"output": "{{ user `output_dir` }}/virtualbox/{{ user `box_name` }}.box",
 				"compression_level": 9,
 				"keep_input_artifact": true
-			},
-			{
-				"type": "atlas",
-				"only": ["virtualbox-iso"],
-				"artifact": "{{user `atlas_username`}}/{{user `box_name`}}",
-				"artifact_type": "vagrant.box",
-				"metadata": {
-					"provider": "virtualbox",
-					"version": "{{user `box_version`}}",
-					"description": "{{user `box_changelog`}}"
-				}
 			}
 		]
 	]
