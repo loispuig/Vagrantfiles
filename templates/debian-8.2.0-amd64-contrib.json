@@ -3,14 +3,7 @@
 		"atlas_token": "{{env `ATLAS_TOKEN`}}",
 		"atlas_username": "{{env `ATLAS_USERNAME`}}",
 		"box_version": "0.1.1",
-		"box_description": "
-			Minimal debian install  
-			Locale en_US  
-			Keyboard us  
-			VirtualBox guest additions  
-			Additional packages : curl, cron, unzip, puppet 3.7, git 2.1.4, screenfetch  
-			Some commons aliases in /home/vagrant/.bash_aliases
-		",
+		"box_description": "Minimal debian install  Locale en_US  Keyboard us  VirtualBox guest additions  Additional packages : curl, cron, unzip, puppet 3.7, git 2.1.4, screenfetch  Some commons aliases in /home/vagrant/.bash_aliases",
 		"box_name": "debian-8.2.0-amd64",
 		"box_memory": "512",
 		"box_cpu": "1",
