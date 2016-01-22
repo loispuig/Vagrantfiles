@@ -1,7 +1,7 @@
 set -e
 
-echo "curl, cron, unzip, git"
-apt-get --yes install curl cron unzip git
+echo "curl, cron, unzip"
+apt-get --yes install curl cron unzip
 
 echo "installing screenfetch"
 apt-get --yes install screenfetch
