@@ -1,7 +1,7 @@
 {
 	"variables": {
 		"box_name": "debian-jessie-amd64",
-		"box_version": "8.2.1",
+		"box_version": "8.2.2",
 		"box_memory": "512",
 		"box_cpu": "1",
 		"output_dir": "builds",
