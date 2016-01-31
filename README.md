@@ -24,5 +24,5 @@ ATLAS_USERNAME
 
 Then start the build process
 ```
-packer build templates/templatename-contrib.json
+packer build templates/templatename-atlas.json
 ```
