@@ -16,7 +16,7 @@ packer build templates/templatename.json
 
 ## Rebuilding a box and publish to Atlas
 
-Sets the following environment variables in your environment
+Sets the following environment variables
 ```
 ATLAS_TOKEN
 ATLAS_USERNAME
