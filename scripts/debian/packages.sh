@@ -11,5 +11,5 @@ echo "installing puppet"
 apt-get --yes install puppet
 
 echo "installing librarian"
-gem install activesupport 4.2.5.1
+gem install activesupport 4.2.5
 gem install librarian
