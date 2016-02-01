@@ -3,7 +3,7 @@
 		"atlas_token": "{{env `ATLAS_TOKEN`}}",
 		"atlas_username": "{{env `ATLAS_USERNAME`}}",
 		"box_name": "debian-jessie-amd64",
-		"box_version": "8.3.1",
+		"box_version": "8.3.2",
 		"box_changelog": "Added librarian",
 		"box_memory": "512",
 		"box_cpu": "1",
