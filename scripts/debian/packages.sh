@@ -4,10 +4,10 @@ echo "installing screenfetch"
 apt-get --yes install screenfetch
 echo "screenfetch" >> /home/vagrant/.bashrc
 
-echo "installing puppet"
+echo "installing git"
 apt-get --yes install git
 
-echo "installing puppet"
+echo "installing puppet 3"
 apt-get --yes install puppet
 
 echo "installing librarian-puppet"
