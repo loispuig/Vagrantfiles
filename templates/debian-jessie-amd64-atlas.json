@@ -87,6 +87,17 @@
 				"output": "{{ user `output_dir` }}/virtualbox/{{ user `box_name` }}.box",
 				"compression_level": 9,
 				"keep_input_artifact": true
+			},		
+ 			{		
+ 				"type": "atlas",		
+ 				"only": ["virtualbox-iso"],		
+ 				"artifact": "{{user `atlas_username`}}/{{user `box_name`}}",		
+ 				"artifact_type": "vagrant.box",		
+ 				"metadata": {		
+					"provider": "virtualbox",		
+					"version": "{{user `box_version`}}",		
+					"description": "{{user `box_changelog`}}"		
+				}
 			}
 		]
 	]
