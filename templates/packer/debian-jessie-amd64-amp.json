@@ -1,7 +1,7 @@
 {
 	"variables": {
 		"box_name": "debian-jessie-amd64-amp",
-		"box_version": "8.5.0",
+		"box_version": "8.5.1",
         "box_changelog": "Update to Debian Jessie 8.5.0",
 		"box_memory": "512",
 		"box_cpu": "1",
