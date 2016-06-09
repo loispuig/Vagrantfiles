@@ -87,7 +87,7 @@
 				"type": "vagrant",
 				"output": "{{ user `output_dir` }}/virtualbox/{{ user `box_name` }}.box",
 				"compression_level": 9,
-				"keep_input_artifact": false,
+				"keep_input_artifact": true,
 				"vagrantfile_template": "templates/vagrantfiles/debian-jessie-amd64-amp.Vagrantfile"
 			},
  			{
