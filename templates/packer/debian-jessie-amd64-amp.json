@@ -1,8 +1,8 @@
 {
 	"variables": {
 		"box_name": "debian-jessie-amd64-amp",
-		"box_version": "8.4.0",
-        "box_changelog": "First release",
+		"box_version": "8.5.0",
+        "box_changelog": "Update to Debian Jessie 8.5.0",
 		"box_memory": "512",
 		"box_cpu": "1",
 		"output_dir": "builds",
@@ -11,9 +11,9 @@
 		"headless": "false",
 		"disk_size": "20480",
 		"guest_os_type": "Debian_64",
-		"iso_checksum": "8d52d1b7789cd5a464aae719f05299ec",
+		"iso_checksum": "3e1b9029a0cf188730646c379d15073f",
 		"iso_checksum_type": "md5",
-		"iso_url": "http://cdimage.debian.org/debian-cd/8.4.0/amd64/iso-cd/debian-8.4.0-amd64-netinst.iso",
+		"iso_url": "http://ftp.crifo.org/debian-cd/8.5.0/amd64/iso-cd/debian-8.5.0-amd64-netinst.iso",
 		"ssh_username": "vagrant",
 		"ssh_password": "vagrant",
 		"ssh_port": "22",
