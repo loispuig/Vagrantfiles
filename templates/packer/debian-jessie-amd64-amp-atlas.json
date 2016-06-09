@@ -3,7 +3,7 @@
 		"atlas_token": "{{env `ATLAS_TOKEN`}}",
 		"atlas_username": "{{env `ATLAS_USERNAME`}}",
 		"box_name": "debian-jessie-amd64-amp",
-		"box_version": "8.5.1",
+		"box_version": "8.5.2",
         "box_changelog": "Update to Debian Jessie 8.5.0",
 		"box_memory": "512",
 		"box_cpu": "1",
@@ -88,7 +88,7 @@
 				"output": "{{ user `output_dir` }}/virtualbox/{{ user `box_name` }}.box",
 				"compression_level": 9,
 				"keep_input_artifact": false,
-				"vagrantfile_template": "templates/vagrantfiles/debian-jessie-amd64-amp.packer"
+				"vagrantfile_template": "templates/vagrantfiles/debian-jessie-amd64-amp.Vagrantfile"
 			},
  			{
  				"type": "atlas",

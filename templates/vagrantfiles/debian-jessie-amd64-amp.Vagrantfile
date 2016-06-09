@@ -2,9 +2,9 @@ Vagrant.require_version ">= 1.8.1"
 
 Vagrant.configure("2") do |config|
 
-	config.vm.box = "ATLAS_USERNAME/BOX_NAME"
+	config.vm.box = "loispuig/debian-jessie-amd64-amp"
 
-		# Create a forwarded port mapping which allows access to a specific port
+	# Create a forwarded port mapping which allows access to a specific port
 	# within the machine from a port on the host machine. In the example below,
 	# accessing "localhost:8080" will access port 80 on the guest machine.
 	#config.vm.network "forwarded_port", guest: 80, host: 8080
@@ -31,7 +31,7 @@ Vagrant.configure("2") do |config|
 	config.vm.synced_folder "www/",          "/var/www",          create: true, owner: 'www-data', group: 'vagrant', mount_options: ["dmode=775,fmode=664"]
 
 	config.vm.provider "virtualbox" do |vb|
-		vb.name = BOX_NAME
+		vb.name = vg-damp
 		vb.gui = false
 		vb.memory = 512
 		vb.cpus = 1
