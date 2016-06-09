@@ -3,7 +3,7 @@
 		"atlas_token": "{{env `ATLAS_TOKEN`}}",
 		"atlas_username": "{{env `ATLAS_USERNAME`}}",
 		"box_name": "debian-jessie-amd64-amp",
-		"box_version": "8.5.2",
+		"box_version": "8.5.3",
         "box_changelog": "Update to Debian Jessie 8.5.0",
 		"box_memory": "512",
 		"box_cpu": "1",

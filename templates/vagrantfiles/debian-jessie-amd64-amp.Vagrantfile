@@ -39,17 +39,4 @@ Vagrant.configure("2") do |config|
 		# no more than 50% would be used on your own host machine
 		vb.customize ["modifyvm", :id, "--cpuexecutioncap", "50"]
 	end
-
-	config.vm.provision "shell", inline: <<-SHELL
-		cd /vagrant/puppet
-		rm -Rf .tmp .librarian Puppetfile.lock
-		librarian-puppet install --verbose --clean
-	SHELL
-
-	config.vm.provision "puppet" do |puppet|
-		puppet.manifests_path = "puppet"
-		puppet.manifest_file = "init.pp"
-		puppet.module_path = "puppet/modules"
-		puppet.options = "--debug --verbose"
-	end
 end
