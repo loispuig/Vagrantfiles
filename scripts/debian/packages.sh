@@ -8,7 +8,15 @@ echo "installing git"
 apt-get --yes install git
 
 echo "installing puppet 3"
-apt-get --yes install puppet
+cd /tmp
+wget https://apt.puppetlabs.com/puppetlabs-release-pc1-jessie.deb
+dpkg -i puppetlabs-release-pc1-jessie.deb
+export PATH=$PATH:/opt/puppetlabs/bin
+apt-get update
+apt-get --yes install puppet-agent
+
+echo "installing ruby"
+apt-get --yes install ruby
 
 echo "installing librarian-puppet"
 gem install activesupport -v 4.2.5.1
