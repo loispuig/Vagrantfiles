@@ -4,3 +4,4 @@ packer_cache
 *.ovf
 *.vdi
 *.vmdk
+config.yml
