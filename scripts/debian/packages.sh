@@ -12,6 +12,7 @@ cd /tmp
 wget https://apt.puppetlabs.com/puppetlabs-release-pc1-jessie.deb
 dpkg -i puppetlabs-release-pc1-jessie.deb
 export PATH=$PATH:/opt/puppetlabs/bin
+apt-key adv --recv-key --keyserver pgp.mit.edu EF8D349F
 apt-get update
 apt-get --yes install puppet-agent
 
